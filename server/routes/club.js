@@ -1,26 +1,9 @@
-var express = require("express");
-var router = express.Router();
+let express = require("express");
+let Controller = require("../controllers/club");
+let router = express.Router();
 
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/test");
-
-var db = mongoose.connection;
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-  // we're connected!
-});
-
-router.use(function timeLog(req, res, next) {
-  console.log("Time: ", Date.now());
-  next();
-});
-// define the home page route
-router.get("/", function(req, res) {
-  res.send("Birds home page");
-});
-// define the about route
-router.get("/about", function(req, res) {
-  res.send("About birds");
-});
+router.get("/", Controller.index.get);
+router.get("/new", Controller.new.get);
+router.post("/new", Controller.new.post);
 
 module.exports = router;

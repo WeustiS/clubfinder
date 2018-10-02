@@ -1,0 +1,8 @@
+- Build out full club model
+    - Collect Data from teachers
+- Figure out CSS on PUG files
+- Add template inheritance to PUG Files
+- AuthO for accounts
+    - Edit permissions
+- Individual Club pages (pass as object into /club/:clubname, display as such)
+- Club searching
