@@ -35,12 +35,16 @@ module.exports = {
   club: {
     get(req, res) {
       console.log(req.params.clubName);
-      club = Club.find({ clubName: req.params.clubName }, (err, club) => {
-        if (err) res.redirect("/clubs");
-        if (club.length > 1) res.redirect("/clubs");
-        console.log(club[0]);
-        res.render("clubs/club", club[0]);
-      });
+      Club.find({ clubName: req.params.clubName })
+        .then(club => {
+          if (club.length > 1) res.redirect("/clubs");
+          console.log(club[0]);
+          res.locals.club = club;
+          res.render("clubs/club");
+        })
+        .catch(err => {
+          res.redirect("/clubs");
+        });
     }
   }
 };
