@@ -1,7 +1,15 @@
-doctype html
-html(lang="en")
-  body
-    h1  Testing!
-    each club in clubs
-        h2= club.name
-        h3= club.desc
+extends ./../../layouts/main.pug
+block content 
+  each club in clubs
+    div.club
+      a(href="http://localhost:8080/clubs/" + club.clubName)= club.clubName
+      p= club.clubDesc
+      p= club.clubDues
+      img(src=club.clubPics)
+      p= club.clubDate
+      //- ul.events
+      //-   each event in clubEvents
+      //-     li.event= event
+      //- ul.members
+      //-   each member in clubMembers
+      //-     li.member= member

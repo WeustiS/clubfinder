@@ -22,7 +22,7 @@ app.get("/", function(req, res) {
   res.render("index", { Name: "William" });
 });
 
-app.use("/club", require("./routes/club"));
+app.use("/clubs", require("./routes/club"));
 
 db.on("connected", () => {
   app.listen(3000, function() {

@@ -1,4 +1,5 @@
 var Club = require("../models/club");
+var url = require("url");
 
 module.exports = {
   index: {
@@ -20,16 +21,26 @@ module.exports = {
     },
 
     post(req, res) {
-      const { name, desc } = req.body;
-
-      Club.create({ name, desc })
+      const { clubName, clubDesc, clubDues, clubPics, clubDate } = req.body;
+      Club.create({ clubName, clubDesc, clubDues, clubPics, clubDate })
         .then(() => {
-          console.log("Club Added");
-          res.redirect("/club");
+          res.redirect("/clubs");
         })
         .catch(err => {
           console.error(err);
         });
+    }
+  },
+
+  club: {
+    get(req, res) {
+      console.log(req.params.clubName);
+      club = Club.find({ clubName: req.params.clubName }, (err, club) => {
+        if (err) res.redirect("/clubs");
+        if (club.length > 1) res.redirect("/clubs");
+        console.log(club[0]);
+        res.render("clubs/club", club[0]);
+      });
     }
   }
 };

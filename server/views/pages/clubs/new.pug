@@ -1,17 +1,30 @@
-html
- .container
-      form(action="/club/new", method="post")
+extends ./../../layouts/main.pug
+block content
+    form(action="/clubs/new", method="post")
         .form-group
-            label(for="clubname") Club Name
-            input.form-control#clubname(type="text", name="name")
-            input.form-control#clubname(type="text", name="desc")
-            //- input.form-control#clubname(type="text", name="email")
-            //- input.form-control#clubname(type="text", name="email")
-            //- input.form-control#clubname(type="text", name="email")
-            //- input.form-control#clubname(type="text", name="email")
-            //- input.form-control#clubname(type="text", name="email")
-            //- input.form-control#clubname(type="text", name="email")
+            input.form-control(type="text", name="clubName")
+            p Name ^
+            input.form-control(type="text", name="clubDesc")
+            p Desc ^
+            input.form-control(type="text", name="clubDues")
+            p Dues ^ 
+            input.form-control(type="text", name="clubPics")
+            p url ^
+            input.form-control(type="text", name="clubDate")
+            p date ^
+        //- .colorme Events
+        //-     input.form-control(type="text", name="clubEvents[][eventName]") Name
+        //-     input.form-control(type="text", name="clubEvents[][eventDate]") Date
+        //-     input.form-control(type="text", name="clubEvents[][eventDesc]") Desc
+        //-     input.form-control(type="text", name="clubEvents[][eventNotify]") Notify
+        //-     br 
+        //-     2
+        //-     br
+        //-     input.form-control(type="text", name="clubEvents[][eventName]") Name
+        //-     input.form-control(type="text", name="clubEvents[][eventDate]") Date
+        //-     input.form-control(type="text", name="clubEvents[][eventDesc]") Desc
+        //-     input.form-control(type="text", name="clubEvents[][eventNotify]") Notify
+        //- .colorme Members
+        //-     input.form-control(type="text", name="clubMembers[][userName]") userName
+        //-     input.form-control(type="text", name="clubMembers[][userName]") userName
         button.btn.btn-primary(type="submit") Submit!
-
-
-        // edit for new club post request
