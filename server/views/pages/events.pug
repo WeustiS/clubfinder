@@ -1,7 +1,7 @@
 extends ./../layouts/main.pug
 block content
   .userField
-    h2 Add Users
+    h2 Add Event
     form(action="/clubs/events", method="post")
       each club in clubs
         input(type="radio" name="eventClub" value=club.clubName id=(club.clubName + "radio"))

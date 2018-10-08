@@ -1,8 +1,8 @@
 extends ./../layouts/main.pug
 block content 
-  .cards.ui.four.column.doubling.stackable.grid.container
-    each club in clubs
-      include ./../components/clubitem.pug
+  .cards.ui.four.column.doubling.stackable.grid.container.cards_height
+      each club in clubs
+        include ./../components/clubitem.pug
   .userField
     h2 Add Users
     form(action="/clubs", method="post")

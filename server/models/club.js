@@ -8,7 +8,7 @@ const clubSchema = new Schema({
   clubDues: Number,
   clubPics: String,
   clubDate: String
-  // clubEvents: [eventSchmea],
+  //   clubEvents: [eventSchmea],
   // clubMembers: [userSchema]
 
   //  clubFinances: incomes, outcomes. Each expenditure/revenue is an object?
