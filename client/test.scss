@@ -1,3 +1,4 @@
+@import "./components/clubitem/_clubitem.scss";
 h1 {
   background-color: blue;
 }
@@ -31,11 +32,12 @@ li.nav:hover {
 li.nav:visited {
   color: #000 !important;
 }
-.club {
-  background-color: beige;
+
+.userField {
   margin-left: 50px;
-  border: solid 1px black;
-  width: 80%;
-  box-shadow: 5px 5px 20px 1px;
-  padding-left: 20px;
+  margin-top: 50px;
+  border: solid 2px black;
+}
+::placeholder {
+  color: gray;
 }

@@ -2,28 +2,12 @@ const mongoose = require("mongoose");
 
 const { Schema } = mongoose;
 
-// create a schema
-const userSchema = new Schema({
-  userName: String,
-  userClubs: [String], // Is this a thing?
-  userAccountCreated: Date
-});
-const eventSchmea = new Schema({
-  eventName: String,
-  eventDate: Date,
-  eventDesc: String,
-  eventNotify: Boolean
-});
-
 const clubSchema = new Schema({
-  // name: String,
-  // desc: String
-
   clubName: String,
   clubDesc: String,
   clubDues: Number,
   clubPics: String,
-  clubDate: Date
+  clubDate: String
   // clubEvents: [eventSchmea],
   // clubMembers: [userSchema]
 

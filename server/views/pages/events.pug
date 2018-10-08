@@ -1,0 +1,21 @@
+extends ./../layouts/main.pug
+block content
+  .userField
+    h2 Add Users
+    form(action="/clubs/events", method="post")
+      each club in clubs
+        input(type="radio" name="eventClub" value=club.clubName id=(club.clubName + "radio"))
+        label(for=(club.clubName + "radio")) #{club.clubName}   
+        br
+      input(type="text" name="eventName" id="eventName") 
+      label(for="eventName") Event Name 
+      br
+      input(type="text" name="eventDesc" id="eventDesc") 
+      label(for="eventDesc") Event Description
+      br
+      input(type="text" name="eventDate" id="eventDate") 
+      label(for="eventDate") Event Date
+      br
+      input(type="checkbox" name="eventNotify" id="eventNotify") 
+      label(for="eventNotify") Event Notify 
+      button.btn.btn-primary(type="submit") Submit!

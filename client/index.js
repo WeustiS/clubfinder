@@ -1,4 +1,5 @@
 "use strict";
 if (module.hot) module.hot.accept();
 console.log("hello");
-import "./test.css";
+import "./test.scss";
+import "./components/clubitem/clubitem";

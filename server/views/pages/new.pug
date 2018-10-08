@@ -1,4 +1,4 @@
-extends ./../../layouts/main.pug
+extends ./../layouts/main.pug
 block content
     form(action="/clubs/new", method="post")
         .form-group
@@ -10,7 +10,7 @@ block content
             p Dues ^ 
             input.form-control(type="text", name="clubPics")
             p url ^
-            input.form-control(type="text", name="clubDate")
+            input.form-control(type="text", name="clubDate" placeholder="Hi!")
             p date ^
         //- .colorme Events
         //-     input.form-control(type="text", name="clubEvents[][eventName]") Name

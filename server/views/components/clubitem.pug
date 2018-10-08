@@ -1,0 +1,18 @@
+//- .clubitem
+//-     a.clubitem__clublink(href="http://localhost:8080/clubs/c/" + club.clubName)= club.clubName
+//-     p.clubitem__clubdesc= club.clubDesc
+//-     p.clubitem__clubdues= club.clubDues
+//-     img.clubitem__clubimg(src=club.clubPics)
+//-     p.clubitem__clubdate= club.clubDate
+
+.column
+  .ui.card
+    .image
+      img(src=club.clubPics)
+    .content
+      a(href="http://localhost:8080/clubs/c/" + club.clubName).header= club.clubName
+      .meta
+        span.date= club.clubDate
+      .description= club.clubDesc
+    .extra.content= club.clubDues
+
