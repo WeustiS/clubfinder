@@ -1,4 +1,8 @@
 extends ./../layouts/main.pug
 block content 
   h1 Test! 
-  h2 Testing!
+  h2 Testing! You are 
+  if loggedIn
+    a(href="/dashboard") Dashboard
+  else 
+    a(href="/login") Login!

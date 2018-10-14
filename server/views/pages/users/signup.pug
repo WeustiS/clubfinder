@@ -1,0 +1,20 @@
+extends ./../layouts/main.pug
+block content
+  form.ui.form.signup(action="/signup" method="post")
+    .field
+      label First Name
+      input(type='text' name='userFirstName' placeholder='First Name')
+    .field
+      label Last Name
+      input(type='text' name='userLastName' placeholder='Last Name')
+    .field
+      label Email
+      input(type="email" name="userEmail" placeholder="Email Address")
+    .field 
+      label Password
+      input(type="password" name="userPassword" placeholder="Password")
+    .field
+      .ui.checkbox#terms_checkbox_div
+        input.hidden(type='checkbox' tabindex='1' id="terms_checkbox")
+        label I agree to the Terms and Conditions
+    button.ui.button(type='submit') Submit

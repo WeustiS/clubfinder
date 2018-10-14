@@ -16,3 +16,18 @@ Short Term
 
 Stretch
 - Look into scss and pug mixins (media query)   + nesting 
+
+
+Refactoring
+ - Create Middlewares folder https://expressjs.com/en/guide/using-middleware.html and put app.js middleware inside
+    -- See line 24 
+    -- Make app.js only app.use -s 
+ - Split routes up into individual pages rather than "clubs"
+ - Make the pages folder more organized
+ - Add jquery before semantic, get jquery latest CDN
+ <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+<script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+<script src="semantic/dist/semantic.min.js"></script>
