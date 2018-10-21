@@ -14,14 +14,15 @@ app.use(bodyParser.json());
 app.set("views", resolve(__dirname, "./views/pages")); // specify the views directory
 app.set("view engine", "pug"); // register the template engine
 
-var sess = {
-  secret: process.env.AUTH0_API_KEY,
-  cookie: {},
-  resave: false,
-  saveUninitialized: true
-};
+// var sess = {
+//   secret: process.env.AUTH0_API_KEY,
+//   cookie: {},
+//   resave: false,
+//   saveUninitialized: true
+// };
 
-app.use(session(sess));
+app.use(session(require("./middlewares/passport").session));
+// app.use(session(sess));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -42,7 +43,7 @@ app.use(function(req, res, next) {
     req.session.passport &&
     typeof req.session.passport.user !== "undefined"
   ) {
-    res.locals.loggedIn = true;
+    res.locals.loggedIn = truegedIn = true;
     //   console.log(req.user);
     res.locals.user = req.user._json;
   }
@@ -88,3 +89,9 @@ db.on("connected", () => {
     console.log("Listening http://localhost:3000");
   });
 });
+
+/*
+
+
+
+*/
