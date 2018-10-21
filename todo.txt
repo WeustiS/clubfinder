@@ -36,7 +36,4 @@ Refactoring
 
 - Test
 
-<<<<<<< HEAD
-Neighbor
-=======
->>>>>>> a9ef4d87179199460cb72feaa8af0affc6f5efb1
+Howdy Neighbor
