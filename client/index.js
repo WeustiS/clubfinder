@@ -1,6 +1,6 @@
 "use strict";
 if (module.hot) module.hot.accept();
 console.log("hello");
-import "./index.scss";
+import "./global.scss";
 import "./components/clubitem/clubitem";
 import "./components/signup/signup";
