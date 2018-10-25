@@ -8,7 +8,12 @@ html(lang="en")
     link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.css")
     link(rel="stylesheet", href="/assets/style.css")
   body
+    block header
+      header
+        h2 Club Finder
     include ./../components/navigation.pug
-    block content
-    script(src="/assets/bundle.js")
-    script(src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js")
+    main
+      block content
+      script(src="/assets/bundle.js")
+      script(src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.0/dist/semantic.min.js")
+    
