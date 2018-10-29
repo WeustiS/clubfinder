@@ -4,60 +4,6 @@ var Event = require("../models/event");
 var url = require("url");
 
 module.exports = {
-  index: {
-    get(req, res) {
-      console.log("getting index");
-      Club.find()
-        .then(clubs => {
-          console.log(clubs);
-          res.locals.clubs = clubs;
-          res.render("clubs");
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    },
-    post(req, res) {
-      var { userName, newClubToAdd } = req.body;
-      // find user, get clubs, add this new club
-      console.log("SEARCHING FOR " + userName);
-      console.log(
-        "Got POST request, userName = " + userName + "newClub = " + newClubToAdd
-      );
-      User.findOne({ userName: userName }, function(err, user) {
-        if (user === null) {
-          console.log("Account didn't exist");
-          var userClubs = [newClubToAdd];
-          console.log(userClubs);
-          User.create({ userName, userClubs });
-          res.render("index");
-        } else {
-          console.log("Account existed");
-          if (user.userClubs === null) {
-            console.log("Was null" + user);
-          }
-          console.log("Listing club object -- " + user);
-          console.log("User = " + user);
-          console.log("User clubs = " + user.userClubs);
-          console.log("New club = " + user);
-          if (err) res.redirect("index");
-          if (!user.userClubs.includes(newClubToAdd)) {
-            console.log("User was not in club");
-            user.userClubs.push(newClubToAdd);
-            console.log("Pushed new club " + user.userClubs);
-            user.save(function(err, olduser) {
-              if (err) res.send(err);
-              console.log("Saved new club");
-              res.render("index");
-            });
-          } else if (user.userClubs.includes(newClubToAdd)) {
-            console.log("User was in club");
-            res.render("index");
-          }
-        }
-      });
-    }
-  },
   new_club: {
     get(req, res) {
       res.render("new");

@@ -1,0 +1,38 @@
+User Model
+--
+ sub: 'google-oauth2|109565201557138189351',
+ given_name: 'William',
+ family_name: 'Eustis',
+ nickname: 'willceustis',
+ name: 'William Eustis',
+ picture: 'https://lh4.googleusercontent.com/-7hdVSwJDDRg/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbBW7rWaZq5opeZmYfhhxLxL05rUlg/mo/photo.jpg',
+ locale: 'en',
+ updated_at: '2018-10-28T22:45:21.988Z',
+ email: 'willceustis@gmail.com',
+ email_verified: true }
+ {
+    "email": "willceustis@gmail.com",
+    "email_verified": true,
+    "name": "William Eustis",
+    "given_name": "William",
+    "family_name": "Eustis",
+    "picture": "https://lh4.googleusercontent.com/-7hdVSwJDDRg/AAAAAAAAAAI/AAAAAAAAAAA/ABtNlbBW7rWaZq5opeZmYfhhxLxL05rUlg/mo/photo.jpg",
+    "locale": "en",
+    "updated_at": "2018-10-28T22:45:21.988Z",
+    "user_id": "google-oauth2|109565201557138189351",
+    "nickname": "willceustis",
+    "identities": [
+        {
+            "provider": "google-oauth2",
+            "user_id": "109565201557138189351",
+            "connection": "google-oauth2",
+            "isSocial": true
+        }
+    ],
+    "created_at": "2018-10-14T14:45:49.912Z",
+    "last_ip": "162.205.144.59",
+    "last_login": "2018-10-28T22:45:21.988Z",
+    "logins_count": 18,
+    "blocked_for": [],
+    "guardian_authenticators": []
+}

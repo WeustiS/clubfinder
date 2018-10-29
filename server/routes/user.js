@@ -1,6 +1,6 @@
-const express = require("express");
+const router = require("express").Router();
 const Controller = require("../controllers/user");
-const router = express.Router();
+
 var Auth0Strategy = require("passport-auth0"),
   passport = require("passport");
 const ensureLoggedIn = require("connect-ensure-login").ensureLoggedIn();

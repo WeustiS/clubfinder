@@ -3,18 +3,4 @@ block content
   .cards.ui.four.column.doubling.stackable.grid.container.cards_height
       each club in clubs
         include ./../components/clubitem.pug
-  .userField
-    h2 Add Users
-    form(action="/clubs", method="post")
-      each club in clubs
-        input(type="radio" name="newClubToAdd" value=club.clubName id=(club.clubName + "radio"))
-        label(for=(club.clubName + "radio")) #{club.clubName}   
-        br
-      input(type="text" name="userName" id="userName") 
-      label(for="userName") User's Name
-      //- ul.events
-      //-   each event in clubEvents
-      //-     li.event= event
-      //- ul.members
-      //-   each member in clubMembers
-      //-     li.member= member
+

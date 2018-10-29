@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "server:local": "cross-env mongoDBHost=mongodb://localhost:27017/db nodemon ./server/app.js",
-    "server:dev": "cross-env mongoDBHost=mongodb+srv://admin:123@clubfinder-drcr3.mongodb.net/test?retryWrites=true nodemon ./server/app.js",
+    "server:dev": "cross-env nodemon ./server/app.js",
     "client:build": "rimraf public/assets && cross-env mode=production webpack --config webpack.config.js",
     "client:dev": "rimraf public/assets && cross-env mode=development webpack-dev-server --hot --inline --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"

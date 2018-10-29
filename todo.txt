@@ -1,39 +1,26 @@
  Constant 
 - CSS to Bem convention http://getbem.com/introduction/
-- expand autoprefixing to other css pages (::)
 - Implement https://semantic-ui.com/ (use bem for smaller items)   
 
 Long Term
 - Build out full club model
     - Collect Data from teachers
-- http://www.passportjs.org/docs/username-password/ -- ACCOUNTS
 
 Short Term
 - pass title variable into all pages through controller
-- change index.scss to global.scss with only imports from other .scss-es 
 - pass images into webpack to compress (webpack image loader)
 - club tags + search
 
 Stretch
-- Look into scss and pug mixins (media query)   + nesting 
+- Look into scss and pug mixins (media query) + nesting 
 
 
 Refactoring
- - Create Middlewares folder https://expressjs.com/en/guide/using-middleware.html and put app.js middleware inside
-    -- See line 24 
-    -- Make app.js only app.use -s 
- - Split routes up into individual pages rather than "clubs"
  - Make the pages folder more organized
  - Add jquery before semantic, get jquery latest CDN
 
- <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-<script
-  src="https://code.jquery.com/jquery-3.1.1.min.js"
-  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-<script src="semantic/dist/semantic.min.js"></script>
+https://auth0.com/docs/libraries/lock/v11/configuration#additionalsignupfields-array-
+additionalSignUpFields {Array}
 
-
-- Test
-
-Howdy Neighbor
+in dashboard check if logged in, if not redirect (with .warning.message?)
+https://auth0.com/docs/hooks/extensibility-points/pre-user-registration
