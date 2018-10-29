@@ -22,8 +22,5 @@ Refactoring
 https://auth0.com/docs/libraries/lock/v11/configuration#additionalsignupfields-array-
 additionalSignUpFields {Array}
 
-<<<<<<< HEAD
 in dashboard check if logged in, if not redirect (with .warning.message?)
 https://auth0.com/docs/hooks/extensibility-points/pre-user-registration
-=======
->>>>>>> 43aac6fc6d4a83b68592d8b6a6dec272176143e8
