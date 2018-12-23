@@ -9,7 +9,6 @@ module.exports = {
       console.log("getting index");
       Club.find()
         .then(clubs => {
-          console.log(clubs);
           res.locals.clubs = clubs;
           res.render("clubs");
         })

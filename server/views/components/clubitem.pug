@@ -5,12 +5,12 @@
 //-     img.clubitem__clubimg(src=club.clubPics)
 //-     p.clubitem__clubdate= club.clubDate
 
-.column
+.column#carditem
   .ui.card
     .image
       img(src=club.clubPics)
     .content
-      a(href="http://localhost:8080/c/" + club.clubName).header= club.clubName
+      a(href="http://localhost:8080/c/" + club.clubName).header.clubItem= club.clubName
       .meta
         span.date= club.clubDate
       .description= club.clubDesc

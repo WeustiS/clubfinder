@@ -1,5 +1,12 @@
 extends ./../layouts/main.pug
 block content 
-  .cards.ui.four.column.doubling.stackable.grid.container.cards_height
-      each club in clubs
+  .cards.ui.three.column.doubling.stackable.grid.container.cards_height
+    each club in clubs
+      .singleClubItem
         include ./../components/clubitem.pug
+  .ui.column.centered.grid
+    .ui.pagination.menu
+      a.paginationItem.item.active(data-value=0) 1
+      a.paginationItem.item(data-value=6) 2
+      a.paginationItem.item(data-value=12) 3
+      a.paginationItem.item(data-value=18) 4

@@ -1,9 +1,16 @@
 extends ./../../layouts/main.pug
 block content
-  .club
-    h2= club.clubName
-    p= club.clubDesc
-    p= club.clubDues
+  .image.ui.column.centered.grid
     img(src="/" + club.clubPics)
-    p= club.clubDate
-  
+  .club.ui.items
+    .item
+      .content 
+        .header= club.clubName
+        .meta= "$" + club.clubDues
+        .description
+          p= club.clubDesc
+          p= "Meeting times: " + club.clubDate
+        .extra.ui.column.centered.grid
+          .ui.icon.center.floated.primary.button(data-tooltip="This will direct students to club reminds, sponsor emails, or other resources")
+            | Join Club!
+            i.add.icon  

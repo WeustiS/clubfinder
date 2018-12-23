@@ -26,14 +26,31 @@ module.exports = {
   },
   loggedIn(req, res, next) {
     res.locals.loggedIn = false;
+    console.log("test");
     if (
       req.session.passport &&
       typeof req.session.passport.user !== "undefined"
     ) {
-      res.locals.loggedIn = truegedIn = true;
-      console.log(req.user._json);
-      res.locals.user = req.user._json;
+      res.locals.loggedIn = true;
+      res.locals.user = {
+        ...req.user._json,
+        role: req.user._json["https://localhost:8080"]
+      };
     }
     next();
+  },
+  isVerified(req, res, next) {
+    if (
+      req.session.passport &&
+      typeof req.session.passport.user !== "undefined"
+    ) {
+      if (req.user._json.email_verified) {
+        next();
+      }
+      req.flash("error", "You must verify your email"); // this will write the error message to the flash storage
+      req.logout();
+      res.redirect("/");
+    }
+    next(); // else (this runs if the user is not logged in) - continue to the next...
   }
 };

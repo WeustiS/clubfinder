@@ -1,9 +1,14 @@
 extends ./../layouts/main.pug
 block content
-  header
-    h1 Test!
-  h2 Testing!
-  if loggedIn
-    a(href="/dashboard") Dashboard
-  else 
-    a(href="/login") Login!
+  img#bgimg(src="./../../../public/band.jpg")
+  .ui.rows.centered.grid
+    h2.row Welcome to Club Finder, go to "View Clubs" to see the available clubs!
+    if !loggedIn
+      .ui.buttons
+        a.button.ui.button.massive.blue(href="/login") Join as a student!
+        .or
+        a.button.ui.button.massive.green(href="/login") Join as a teacher!
+    else
+      a.button.ui.button.massive.green(href="/dashboard") Dashboard
+    if messages
+      p=messages

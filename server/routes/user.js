@@ -10,7 +10,9 @@ router.post("/signup", Controller.signup.post);
 router.get("/users/:userName", ensureLoggedIn, Controller.user.get);
 router.get(
   "/login",
-  passport.authenticate("auth0", { scope: "openid email profile" }),
+  passport.authenticate("auth0", {
+    scope: "openid email profile app_metadata roles"
+  }),
   function(req, res) {
     res.redirect("/");
   }

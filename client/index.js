@@ -2,5 +2,5 @@
 if (module.hot) module.hot.accept();
 console.log("hello");
 import "./global.scss";
-import "./components/clubitem/clubitem";
-import "./components/signup/signup";
+import "./components/login/login";
+import "./components/clubs/clubs";

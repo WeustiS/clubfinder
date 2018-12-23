@@ -24,3 +24,22 @@ additionalSignUpFields {Array}
 
 in dashboard check if logged in, if not redirect (with .warning.message?)
 https://auth0.com/docs/hooks/extensibility-points/pre-user-registration
+
+
+--
+
+Changing lock to a client side embed with dedicated page https://auth0.com/docs/jwt#how-do-json-web-tokens-work "e following diagram shows how a JWT is obtained and used to access APIs or resources:"
+
+https://auth0.com/docs/libraries/lock/v11
+
+When the user logs in, auth0 will send a JSON web token which will be stored as a cookie clientside. That is automagically sent to the server on requests, and can be used to determine permisisons and authentication. 
+--
+Middleware to prevent unverified users from signing in 
+
+Prevent people from making clubs if they are a student both by not showing the form and by checkign in the controller for permissions
+
+Fix ln 33 in app.js and the according middleware
+
+Test loggedIn on user (and make sure they are getting permissiosn level), then test isVerified on a logged in user ( and make sure it works) 
+Current issue is req.user not being passed to loggedIn. Just check to make sure it has access to req.user when it needs it (and make sure it has those roles/check the rule).
+Re-do isVerified logic?  (research passport's docs to understand it better. Figure out where user is stroed once they are logged it. They *should* be accessable from req.user when logged in always)

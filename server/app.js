@@ -5,8 +5,10 @@ const authMiddleware = require("./middlewares/auth");
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
+const cookieParser = require("cookie-parser");
 const session = require("express-session");
 const passport = require("passport");
+const flash = require("connect-flash");
 
 mongoose.connect(
   process.env.MONGOSERVER,
@@ -23,9 +25,12 @@ app.set("view engine", "pug"); // register the template engine
 
 app.use(session(authMiddleware.session));
 app.use(passport.initialize());
+app.use(cookieParser("temp secret")); // make this into a .env variable one day
+app.use(flash());
 app.use(passport.session());
 app.use(express.static("public"));
-app.use(authMiddleware.loggedIn);
+app.use(authMiddleware.loggedIn); // this is adding it as middleware
+// app.use(authMiddleware.isVerified);
 
 app.use("/", require("./routes/club"));
 app.use("/", require("./routes/user"));
